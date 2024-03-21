@@ -141,7 +141,7 @@ remote_write:
   - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
     basic_auth:
       username: 1463871
-      password: glc_eyJvIjoiMTA3MTQxOSIsIm4iOiJzdGFjay04NzU2NzItaW50ZWdyYXRpb24tcHJvbWV0aGV1cyIsImsiOiJZbDFjQjlEODU1YzZRWklwZWY3ODdoN2wiLCJtIjp7InIiOiJwcm9kLXVzLWVhc3QtMCJ9fQ==
+      password: glc_eyJvIjoiMTA3MTQxOSIsIm4iOiJzdGFjay04NzU2NzItaG0tcmVhZC1uZXdfZGVmbGkiLCJrIjoiQzd4dDFCNEtRN2o3QTJnSjZ1bTYxMEtKIiwibSI6eyJyIjoicHJvZC11cy1lYXN0LTAifX0=
 scrape_configs:
   - job_name: node
     static_configs:
