@@ -67,7 +67,7 @@ sudo chown prometheus:prometheus /usr/local/bin/{prometheus,promtool}
 ```
 
 ```bash
-sudo cp -r prometheus-2.51.0.linux-amd64/{consoles,console_library} /etc/prometheus/
+sudo cp -r prometheus-2.51.0.linux-amd64/{consoles,console_libraries} /etc/prometheus/
 ``` 
 
 ```bash
