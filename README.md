@@ -166,7 +166,7 @@ scrape_configs:
 ```
 
 ```bash
-sudo killall -HUP prometheus
+sudo systemctl restart prometheus
  ```
 
 **Trouble Shooting** 
