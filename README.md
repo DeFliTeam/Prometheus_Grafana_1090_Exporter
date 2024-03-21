@@ -100,10 +100,10 @@ Type=simple
 
 # Location of the prometheus executab;e
 ExecStart=/usr/local/bin/prometheus \ 
- --config.file=/etc/prometheus/prometheus.yml \ 
- --storage.tdsb.path=/var/lib/prometheus/ \ 
- --web.console.templates=/etc/prometheus/consoles \ 
- --web.console.libraries=/etc/prometheus/console_libraries 
+ -config.file /etc/prometheus/prometheus.yml \ 
+ -storage.tdsb.path /var/lib/prometheus/ \ 
+ -web.console.templates /etc/prometheus/consoles \ 
+ -web.console.libraries /etc/prometheus/console_libraries 
  
  [Install] 
  WantedBy=multi-user.target
