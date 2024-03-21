@@ -55,11 +55,11 @@ wget https://github.com/prometheus/prometheus/releases/download/v2.51.0/promethe
 ```
 
 ```bash
-tar xzf prometheus-2.51.0.linux-amd64.tar.gz
+tar xzf prometheus-2.51.0.linux-amd64.tar.gz prometheus-2.51.0.linux-amd64/
 ```
 
 ```bash
-sudo cp tar xzf prometheus-2.51.0.linux-amd64/{prometheus,promtool} /usr/local/bin/
+sudo cp prometheus-2.51.0.linux-amd64/{prometheus,promtool} /usr/local/bin/
 ```
 
 ```bash
