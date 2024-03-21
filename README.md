@@ -89,21 +89,19 @@ sudo vi /etc/systemd/system/prometheus.service
 
 ```bash
 [Unit] 
-Description Prometheus Time Series Collection and Processing Server 
-Wants network-online.target 
-After network-online.target 
+Description Prometheus Server 
+Wants=network-online.target 
+After=network-online.target 
 
 [Service] 
-User prometheus 
-Group prometheus
-Type simple
-
-# Location of the prometheus executab;e
+User=prometheus 
+Group=prometheus
+Type=simple
 ExecStart=/usr/local/bin/prometheus \ 
- -config.file /etc/prometheus/prometheus.yml \ 
- -storage.tdsb.path /var/lib/prometheus/ \ 
- -web.console.templates /etc/prometheus/consoles \ 
- -web.console.libraries /etc/prometheus/console_libraries 
+ --config.file /etc/prometheus/prometheus.yml \ 
+ --storage.tsdb.path /var/lib/prometheus/ \ 
+ --web.console.templates=/etc/prometheus/consoles \ 
+ --web.console.libraries=/etc/prometheus/console_libraries 
  
  [Install] 
  WantedBy=multi-user.target
