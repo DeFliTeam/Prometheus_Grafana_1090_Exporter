@@ -13,8 +13,8 @@ Run the following command
 ```bash
 
    dump1090exporter \
-  --resource-path=<http://localhost:8080> \
-  --port=<9105> \
+  --resource-path=http://localhost:8080 \
+  --port=9105 \
   --debug 
 ```
 
