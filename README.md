@@ -83,7 +83,7 @@ sudo chown prometheus:prometheus /var/lib/prometheus
 ```
 
 ```bash
-sudo vi /etc/systemd/system/prometheus.service  
+sudo nano /etc/systemd/system/prometheus.service  
 ```
 **PASTE**
 
@@ -111,6 +111,48 @@ ExecStart=/usr/local/bin/prometheus \
  ctrl x + y
  ```
 
+ ```bash
+ sudo nano /etc/prometheus/prometheus.yml
+```
+ 
+ **Use the following data inputs (note you must change your job name to your bucket where specified)** 
+
+```bash
+ #my global config
+ global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+  external_labels:
+    origin_prometheus: prometheus01
+remote_write:
+  - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
+    basic_auth:
+      username: 1463871
+      password: glc_eyJvIjoiMTA3MTQxOSIsIm4iOiJzdGFjay04NzU2NzItaG0tcmVhZC1uZXdfZGVmbGkiLCJrIjoiQzd4dDFCNEtRN2o3QTJnSjZ1bTYxMEtKIiwibSI6eyJyIjoicHJvZC11cy1lYXN0LTAifX0=
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+   - static_configs:
+       - targets:
+         # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  - job_name: Your_bucket_name
+    static_configs:
+      - targets: ["localhost:9015","localhost:9090"]
+ 
+```
+
+ ```bash     
+ ctl x + y
+```
+
 ```bash
  sudo systemctl daemon-reload
 ```
@@ -121,43 +163,6 @@ ExecStart=/usr/local/bin/prometheus \
 
 ```bash
  sudo systemctl enable prometheus
-```
- 
- **Test prometheus is running by visiting your-public-ip:9090**
-
- ```bash
- sudo vi /etc/prometheus/prometheus.yml
-```
- 
- **Use the following data inputs (note you must change your job name to your bucket where specified. Do not change "node" portion of the first job name)** 
-
-```bash
-
- global:
-  scrape_interval: 60s
-  external_labels:
-    origin_prometheus: prometheus01
-remote_write:
-  - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
-    basic_auth:
-      username: 1463871
-      password: glc_eyJvIjoiMTA3MTQxOSIsIm4iOiJzdGFjay04NzU2NzItaG0tcmVhZC1uZXdfZGVmbGkiLCJrIjoiQzd4dDFCNEtRN2o3QTJnSjZ1bTYxMEtKIiwibSI6eyJyIjoicHJvZC11cy1lYXN0LTAifX0=
-scrape_configs:
-  - job_name: node_bucketID
-    static_configs:
-      - targets: ["localhost:9090"]
- 
- 
-  - job_name: 'BUCKET ID'
-    scrape_interval: 10s
-    scrape_timeout: 5s
-    static_configs:
-      - targets: ["localhost:9105"]
-```
-
- ```bash     
- ctl x + y
-```
 
 ```bash
 sudo killall -HUP prometheus
@@ -165,5 +170,4 @@ sudo killall -HUP prometheus
 
 **Trouble Shooting** 
 
-You can change the "localhost" parameters to your local IP address (192.xxx.xxx.xxx)
- sudo killall -HUP prometheus
+You can change the "localhost" parameters to your local IP address (192.xxx.xxx.xxx) or alternatively to the public IP address where you find your tar1090
