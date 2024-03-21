@@ -13,7 +13,7 @@ Run the following command
 ```bash
 
    dump1090exporter \
-  --resource-path=http://localhost/tar1090/data/aircraft.son \
+  --resource-path=http://localhost/tar1090/data/aircraft.json \
   --port=9105 \
   
 ```
