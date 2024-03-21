@@ -163,6 +163,7 @@ scrape_configs:
 
 ```bash
  sudo systemctl enable prometheus
+```
 
 ```bash
 sudo killall -HUP prometheus
