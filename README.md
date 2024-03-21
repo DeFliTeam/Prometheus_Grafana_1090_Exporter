@@ -13,9 +13,9 @@ Run the following command
 ```bash
 
    dump1090exporter \
-  --resource-path=http://localhost:8080 \
+  --resource-path=http://localhost/tar1090/data/aircraft.son \
   --port=9105 \
-  --debug 
+  
 ```
 
 **Docker** 
