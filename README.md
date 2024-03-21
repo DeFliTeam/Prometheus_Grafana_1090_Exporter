@@ -89,14 +89,14 @@ sudo vi /etc/systemd/system/prometheus.service
 
 ```bash
 [Unit] 
-Description=Prometheus Time Series Collection and Processing Server 
-Wants=network-online.target 
-After=network-online.target 
+Description Prometheus Time Series Collection and Processing Server 
+Wants network-online.target 
+After network-online.target 
 
 [Service] 
-User=prometheus 
-Group=prometheus
-Type=simple
+User prometheus 
+Group prometheus
+Type simple
 
 # Location of the prometheus executab;e
 ExecStart=/usr/local/bin/prometheus \ 
@@ -106,7 +106,7 @@ ExecStart=/usr/local/bin/prometheus \
  -web.console.libraries /etc/prometheus/console_libraries 
  
  [Install] 
- WantedBy=multi-user.target
+ WantedBy multi-user.target
 ```
 
  ```bash
