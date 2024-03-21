@@ -129,7 +129,7 @@ ExecStart=/usr/local/bin/prometheus \
  sudo vi /etc/prometheus/prometheus.yml
 ```
  
- **Use the following data inputs (note you must change your job name to your bucket where specified. Do not change the "job_name: node")** 
+ **Use the following data inputs (note you must change your job name to your bucket where specified. Do not change "node" portion of the first job name)** 
 
 ```bash
 
@@ -143,7 +143,7 @@ remote_write:
       username: 1463871
       password: glc_eyJvIjoiMTA3MTQxOSIsIm4iOiJzdGFjay04NzU2NzItaG0tcmVhZC1uZXdfZGVmbGkiLCJrIjoiQzd4dDFCNEtRN2o3QTJnSjZ1bTYxMEtKIiwibSI6eyJyIjoicHJvZC11cy1lYXN0LTAifX0=
 scrape_configs:
-  - job_name: node
+  - job_name: node_bucketID
     static_configs:
       - targets: ["localhost:9090"]
  
