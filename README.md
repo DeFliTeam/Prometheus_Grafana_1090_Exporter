@@ -71,7 +71,7 @@ sudo cp -r prometheus-2.51.0.linux-amd64/{consoles,console_libraries} /etc/prome
 ``` 
 
 ```bash
-sudo cp prometheus prometheus-2.51.0.linux-amd64/prometheus.yml /etc/prometheus/prometheus.yml
+sudo cp prometheus-2.51.0.linux-amd64/prometheus.yml /etc/prometheus/prometheus.yml
 ``` 
 
 ```bash
