@@ -106,7 +106,7 @@ ExecStart=/usr/local/bin/prometheus \
  -web.console.libraries /etc/prometheus/console_libraries 
  
  [Install] 
- WantedBy multi-user.target
+ WantedBy=multi-user.target
 ```
 
  ```bash
