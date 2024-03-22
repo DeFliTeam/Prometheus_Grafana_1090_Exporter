@@ -143,10 +143,19 @@ rule_files:
   # - "second_rules.yml"
 
 scrape_configs:
-  - job_name: Your_bucket_name
+
+  - job_name: "prometheus"
+
     static_configs:
-      - targets: ["localhost:9015","localhost:9090"]
- 
+      - targets: ["localhost:9090"]
+
+  - job_name: "your_bucket_id"
+
+  # Override the global default and scrape targets from this job every 5 seconds.
+  scrape_interval: 5s
+
+    static_configs:
+      - targets: [0.0.0.0:9105"] 
 ```
 
  ```bash     
