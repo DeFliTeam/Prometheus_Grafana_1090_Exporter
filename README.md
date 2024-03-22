@@ -171,4 +171,12 @@ sudo systemctl restart prometheus
 
 **Trouble Shooting** 
 
-You can change the "localhost" parameters to your local IP address (192.xxx.xxx.xxx) or alternatively to the public IP address where you find your tar1090
+You can change the "localhost" parameters to your local IP address (192.xxx.xxx.xxx) or alternatively to the public IP address where you find your tar1090/data/ 
+
+To force start prometheus if you are having issues with systemd use 
+
+```bash 
+cd prometheus-2.51.0.linux-amd64/
+./prometheus
+```
+
