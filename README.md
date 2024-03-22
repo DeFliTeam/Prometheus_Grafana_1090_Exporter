@@ -122,8 +122,7 @@ ExecStart=/usr/local/bin/prometheus \
  global:
   scrape_interval: 10s
   evaluation_interval: 10s
-  external_labels:
-    origin_prometheus: prometheus01
+ 
 remote_write:
   - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
     basic_auth:
